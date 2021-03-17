@@ -1,0 +1,59 @@
+{{ define "main" }}
+
+<h1 class="hed">
+  {{- if .Parent -}}
+    <a href="{{ .Parent.RelPermalink }}" class="hed__link">
+      <span class="hed__sec">
+        {{- .Parent.Title -}}
+      </span>
+    </a>
+    <span class="hed__sep">:</span>
+  {{- end -}}
+  <span class="hed__title">
+    {{- .Title -}}
+  </span>
+</h1>
+
+
+{{ if eq .CurrentSection.Section "notes" }}
+  <section class="dek">
+    Created:
+    <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+      {{- .PublishDate.Format "January 2, 2006" -}}
+    </time>
+  </section>
+{{ end }}
+
+
+<section class="md">
+  {{ .Content }}
+</section>
+
+
+{{- if eq .Kind "page" -}}
+  <section class="pagi">
+    <div class="pagi__item">
+      {{- with .NextInSection -}}
+        <a href="{{ .Parent.RelPermalink }}">
+          {{- lower .Parent.Title -}}
+        </a>
+        <a href="{{ .Permalink }}">
+          {{- .Title -}}
+        </a>
+      {{- end -}}
+    </div>
+
+    <div class="pagi__item">
+      {{- with .PrevInSection -}}
+        <a href="{{ .Parent.RelPermalink }}">
+          {{- lower .Parent.Title -}}
+        </a>
+        <a href="{{ .Permalink }}">
+          {{- .Title -}}
+        </a>
+      {{- end -}}
+    </div>
+  </section>
+{{- end -}}
+
+{{ end }}

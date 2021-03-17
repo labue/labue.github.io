@@ -1,0 +1,114 @@
+
+body {
+  background-color: $color-shade4;
+
+  &.about {
+    background-color: $color-shade1;
+  }
+
+  &.notes {
+    background-color: $color-shade2;
+  }
+
+  &.work {
+    background-color: $color-shade3;
+  }
+
+  &.error {
+    background-color: $color-active;
+  }
+
+  @include media-m {
+    .nav {
+      &--site {
+        order: 1;
+      }
+
+      &--about {
+        order: 2;
+      }
+
+      &--notes {
+        order: 3;
+      }
+
+      &--work {
+        order: 4;
+      }
+
+      &--home {
+        order: 5;
+      }
+    }
+
+    .content {
+      order: 7;
+    }
+
+    &.about {
+      .content {
+        order: 3;
+      }
+
+      .nav {
+        &--about {
+          display: none;
+        }
+
+        &--notes {
+          order: 4;
+        }
+
+        &--work {
+          order: 5;
+        }
+
+        &--home {
+          order: 6;
+        }
+      }
+    }
+
+    &.notes {
+      .content {
+        order: 4;
+      }
+
+      .nav {
+        &--notes {
+          display: none;
+        }
+
+        &--work {
+          order: 5;
+        }
+
+        &--home {
+          order: 6;
+        }
+      }
+    }
+
+    &.work {
+      .content {
+        order: 5;
+      }
+
+      .nav {
+        &--work {
+          display: none;
+        }
+
+        &--home {
+          order: 6;
+        }
+      }
+    }
+
+    &.home {
+      .nav--home {
+        display: none;
+      }
+    }
+  }
+}

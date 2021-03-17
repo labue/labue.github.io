@@ -1,0 +1,44 @@
+.index {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: $space-xl 0;
+
+  & > div {
+    border-bottom: 1px solid $color-gray-25;
+    margin-bottom: $space-lg;
+    padding-bottom: $space-lg;
+
+    @include media-s-only {
+      &:last-of-type {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    @include media-m {
+      width: calc(50% - #{$space-md});
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  h3 {
+    font: bold $font-lg/1 $font-sans;
+    margin-bottom: $space-md;
+
+    @include media-m {
+      font-size: $font-md;
+    }
+
+    @include media-l {
+      font-size: $font-lg;
+    }
+  }
+
+  p {
+    font-family: $font-sans;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,131 @@
+.content {
+  font-family: $font-text;
+  padding: $space-xl $space-lg;
+  width: 100%;
+  transition: padding-top 0.25s;
+
+  @include media-m {
+    padding: $space-xx $space-xl;
+    overflow-y: scroll;
+
+    @media only screen and (max-height: $breakpoint-h-s) {
+      padding-top: $space-md;
+    }
+  }
+
+  @include media-l {
+    transition: padding-left 0.25s, padding-right 0.25s;
+  }
+
+  @include media-x {
+    padding: $space-xx;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+
+.hed {
+  background-color: $color-gray;
+  color: $color-white;
+  display: flex;
+  font: 200 $font-zz/1.1 $font-heading;
+  margin-bottom: $space-lg;
+  padding: $space-sm $space-md;
+
+  &__sec {
+    text-transform: lowercase;
+  }
+
+  a.hed__link {
+    color: $color-active;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__sep {
+    margin-right: $space-md;
+  }
+}
+
+
+.dek {
+  color: $color-gray-75;
+  font: normal $font-sm/1 $font-mono;
+  margin: $space-sm 0 $space-md 0;
+}
+
+
+.lede {
+  margin: $space-lg 0 $space-xl 0;
+
+  &--section {
+    font-size: $font-lg;
+  }
+}
+
+
+.pagi {
+  border-top: 1px solid $color-gray-50;
+  display: flex;
+  justify-content: space-between;
+  margin-top: $space-xl;
+  padding-top: $space-md;
+
+  &__item {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    width: calc(50% - #{$space-md});
+    line-height: 1.25;
+    font-family: $font-mono;
+
+    &:last-of-type {
+      justify-content: flex-end;
+    }
+
+    &:first-of-type:not(:empty):first-child::before {
+      content: '\00AB';
+      margin-right: $space-xs;
+    }
+
+    &:last-of-type:not(:empty):last-child::after {
+      content: '\00BB';
+      margin-left: $space-xs;
+    }
+
+    a {
+      &:first-of-type {
+        color: $color-active;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &::after {
+          content: ':';
+          color: $color-gray;
+          margin-right: $space-xs;
+        }
+      }
+
+      &:last-of-type {
+        border-bottom: 2px solid currentColor;
+
+        &:hover {
+          border-bottom-color: $color-active;
+        }
+      }
+    }
+  }
+}

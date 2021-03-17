@@ -1,0 +1,51 @@
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  &__item {
+    margin-bottom: $space-xl;
+    width: 100%;
+
+    @include media-l {
+      width: calc(50% - #{$space-md});
+    }
+  }
+
+  &__hed {
+    font-weight: 200;
+    font-size: $font-lg;
+    line-height: 1.1;
+    font-family: $font-mono;
+
+    a {
+      border-bottom: 3px solid currentColor;
+      color: currentColor;
+      display: block;
+      padding-bottom: $space-xs;
+
+      &:hover {
+        border-bottom-color: $color-active;
+      }
+    }
+  }
+
+  &__graf {
+    margin: $space-md 0;
+  }
+
+  &__meta {
+    color: $color-gray-75;
+    display: flex;
+    font: 200 $font-xs/1 $font-mono;
+    justify-content: space-between;
+  }
+
+  &__more {
+    margin-left: auto;
+
+    a:hover {
+      color: $color-active;
+    }
+  }
+}

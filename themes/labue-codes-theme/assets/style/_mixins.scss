@@ -1,0 +1,51 @@
+// Small
+@mixin media-s-only {
+  @media only screen and (max-width: $breakpoint-m - 1) {
+    @content;
+  }
+}
+
+// Medium
+@mixin media-m {
+  @media only screen and (min-width: $breakpoint-m) {
+    @content;
+  }
+}
+
+@mixin media-m-only {
+  @media only screen and (min-width: $breakpoint-m) and (max-width: $breakpoint-l - 1) {
+    @content;
+  }
+}
+
+@mixin media-m-max {
+  @media only screen and (max-width: $breakpoint-l - 1) {
+    @content;
+  }
+}
+
+// Large
+@mixin media-l {
+  @media only screen and (min-width: $breakpoint-l) {
+    @content;
+  }
+}
+
+@mixin media-l-only {
+  @media only screen and (min-width: $breakpoint-l) and (max-width: $breakpoint-x - 1) {
+    @content;
+  }
+}
+
+@mixin media-l-max {
+  @media only screen and (max-width: $breakpoint-x - 1) {
+    @content;
+  }
+}
+
+// XL
+@mixin media-x {
+  @media only screen and (min-width: $breakpoint-x) {
+    @content;
+  }
+}

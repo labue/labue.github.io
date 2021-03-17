@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ $typer := .Params.typer | jsonify }}
+
+<div class="typer typer--main">
+  <h1 class="typer__title">
+    {{ .Title }}
+  </h1>
+</div>
+
+<section class="index">
+  {{ .Content }}
+</section>
+
+<script>
+  window.lc = window.lc || { typer: [] };
+  window.lc.typer.push({
+    selector: '.typer--main',
+    delay: {
+      type: 150,
+      erase: 75,
+      next: 2000,
+    },
+    terms: JSON.parse({{ $typer }}),
+  });
+</script>
+
+{{ end }}

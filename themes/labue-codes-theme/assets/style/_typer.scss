@@ -1,0 +1,42 @@
+.typer {
+  background: $color-gray;
+  color: white;
+  font-family: $font-mono;
+  font-size: $font-lg;
+  font-variant: normal;
+  line-height: 1;
+  padding: $space-lg;
+
+  @include media-l {
+    font-size: $font-zz;
+    padding: $space-xl;
+  }
+
+  &__title {
+    display: inline-block;
+  }
+
+  .cursor {
+    color: $color-active;
+
+    &::after {
+      content: '_';
+      color: white;
+      animation: blink 1s infinite;
+    }
+
+    &.typing {
+      &::after {
+        animation: none;
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  0%  { opacity: 1; }
+  49% { opacity: 1; }
+  50% { opacity: 0; }
+  99% { opacity: 0; }
+  100%  { opacity: 1; }
+}

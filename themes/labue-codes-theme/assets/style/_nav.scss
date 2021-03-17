@@ -1,0 +1,139 @@
+.nav {
+  font: 200 $font-md/1 $font-mono;
+  text-transform: lowercase;
+
+  &--site {
+    align-items: center;
+    background-color: $color-gray;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    .nav__link {
+      margin-right: auto;
+    }
+
+    @include media-m {
+      flex-direction: column;
+
+      .nav__link {
+        margin-bottom: auto;
+      }
+    }
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-of-type(#{$i + 1}) {
+      background-color: nth($colors, $i);
+    }
+  }
+
+  @include media-s-only {
+    &:first-of-type {
+      width: 100%;
+    }
+
+    &:nth-of-type(n+2) {
+      flex-shrink: 0;
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+  }
+
+  @include media-m {
+    display: flex;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    color: currentColor;
+    text-decoration: none;
+    width: 100%;
+
+    @include media-m {
+      width: 50px;
+      transition: width 0.5s;
+    }
+
+    @include media-l {
+      width: 70px;
+    }
+
+    @include media-x {
+      width: 90px;
+    }
+
+    // Align nav label
+    // &::after {
+    //   position: absolute;
+    //   content: ' ';
+    //   width: 1px;
+    //   height: 100vh;
+    //   top: 0;
+    //   left: calc(50% - 1px);
+    //   background-color:red;
+    // }
+  }
+
+  &__label {
+    display: block;
+    margin: $space-sm;
+
+    @include media-m {
+      font-size: $font-lg;
+      left: calc(50% + 11px);
+      margin: 0;
+      position: absolute;
+      top: 1rem;
+      transform-origin: 0 0;
+      transform: rotate(90deg);
+      transition: top 0.25s, left 0.25s;
+
+      @media only screen and (min-height: $breakpoint-h-s) {
+        top: 4rem;
+      }
+    }
+
+    @include media-l {
+      font-size: $font-xl;
+      left: calc(50% + 14px);
+    }
+
+    @include media-x {
+      font-size: $font-xx;
+      left: calc(50% + 17px);
+    }
+  }
+
+  &__social {
+    width: 20px;
+    line-height: 0;
+    margin: 0 16px 0 0;
+
+    @include media-m {
+      margin: 0 0 10px 0;
+
+      @media only screen and (max-height: $breakpoint-h-s) {
+        margin-bottom: 4px;
+      }
+    }
+
+    @include media-x {
+      width: 22px;
+    }
+
+    svg {
+      fill: white;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+$breakpoint-m: 768px;
+$breakpoint-l: 992px;
+$breakpoint-x: 1200px;
+
+$breakpoint-h-s: 400px;
+
+
+$color-gray: #333;
+$color-gray-75: #777;
+$color-gray-50: #aaa;
+$color-gray-25: #ddd;
+$color-white: #fff;
+
+$color-active: rgb(170, 70, 70);
+
+$color-shade1: rgb(167, 186, 204);
+$color-shade2: rgb(193, 207, 219);
+$color-shade3: rgb(220, 227, 235);
+$color-shade4: rgb(246, 248, 250);
+
+$colors: $color-shade1, $color-shade2, $color-shade3, $color-shade4;
+
+
+$space: 16px;
+
+$space-xs: $space * .5;
+$space-sm: $space * .75;
+$space-md: $space;
+$space-lg: $space * 1.5;
+$space-xl: $space * 2;
+$space-xx: $space * 4;
+
+
+$font: 16px;
+
+$font-xs: 0.75rem;
+$font-sm: 0.875rem;
+$font-md: $font;
+$font-lg: 1.25rem;
+$font-xl: 1.5rem;
+$font-xx: 1.75rem;
+$font-zz: 2rem;

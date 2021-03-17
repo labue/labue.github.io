@@ -1,0 +1,30 @@
+baseURL = "https://labue.codes/"
+languageCode = "en-us"
+title = "labue.codes"
+pluralizelisttitles = false
+theme = "labue-codes-theme"
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    pre = "about"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    name = "Notes"
+    pre = "notes"
+    url = "/notes/"
+    weight = 2
+  [[menu.main]]
+    name = "Work"
+    pre = "work"
+    url = "/work/"
+    weight = 3
+  [[menu.main]]
+    name = "Home"
+    pre = "home"
+    url = "/"
+    weight = 4
+
+[markup.goldmark.renderer]
+  unsafe = true
