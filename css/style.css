@@ -631,6 +631,7 @@ body.error {
 .typer {
   background: #333;
   color: white;
+  display: flex;
   font-family: "Source Code Pro", monospace;
   font-size: 1.25rem;
   font-variant: normal;
@@ -645,6 +646,7 @@ body.error {
 }
 .typer__title {
   display: inline-block;
+  margin-right: 12px;
 }
 .typer .cursor {
   color: #aa4646;
