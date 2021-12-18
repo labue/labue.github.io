@@ -505,6 +505,17 @@ body.error {
   border-bottom-color: #aa4646;
 }
 
+.cimg__site--fr {
+  display: block;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 992px) {
+  .cimg__site--fr {
+    float: right;
+    margin: 0 0 20px 20px;
+  }
+}
+
 /**
  * markdown styling
  */
