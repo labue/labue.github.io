@@ -67,7 +67,7 @@ html {
 body {
   height: 100%;
   overflow: auto;
-  line-height: 1.5;
+  line-height: 1.75;
 }
 body ::selection {
   background-color: #aa4646;
@@ -92,7 +92,10 @@ body ::selection {
 }
 
 .nav {
-  font: 200 16px "Source Code Pro", monospace;
+  font-family: "Source Code Pro", monospace;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1;
   text-transform: lowercase;
 }
 .nav--site {
@@ -328,7 +331,10 @@ body.error {
   }
 }
 .index h3 {
-  font: bold 1.25rem "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1;
   margin-bottom: 16px;
 }
 @media only screen and (min-width: 768px) {
@@ -381,8 +387,11 @@ body.error {
 .list__meta {
   color: #777;
   display: flex;
-  font: 200 0.75rem "Source Code Pro", monospace;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.75rem;
+  font-weight: 200;
   justify-content: space-between;
+  line-height: 1;
 }
 .list__more {
   margin-left: auto;
@@ -430,7 +439,11 @@ body.error {
   background-color: #333;
   color: #fff;
   display: flex;
-  font: 200 1.8181818182rem "Source Code Pro", monospace;
+  flex-flow: row wrap;
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.25rem;
+  font-weight: 200;
+  line-height: 1.1;
   margin-bottom: 24px;
   padding: 12px 16px;
 }
@@ -444,12 +457,30 @@ body.error {
   opacity: 0.7;
 }
 .hed__sep {
-  margin-right: 16px;
+  margin-right: 12px;
+}
+@media only screen and (min-width: 992px) {
+  .hed {
+    font-size: 1.75rem;
+  }
+  .hed__sep {
+    margin-right: 16px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .hed {
+    font-size: 2rem;
+  }
+  .hed__sep {
+    margin-right: 16px;
+  }
 }
 
 .dek {
   color: #777;
-  font: normal 0.875rem "Source Code Pro", monospace;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.875rem;
+  line-height: 1;
   margin: 12px 0 16px 0;
 }
 
@@ -457,7 +488,12 @@ body.error {
   margin: 24px 0 32px 0;
 }
 .lede--section {
-  font-size: 1.25rem;
+  font-size: 16px;
+}
+@media only screen and (min-width: 992px) {
+  .lede--section {
+    font-size: 1.25rem;
+  }
 }
 
 .pagi {
@@ -527,8 +563,7 @@ body.error {
   border-bottom-color: #aa4646;
 }
 .md p {
-  margin: 16px 0;
-  line-height: 1.5;
+  margin: 24px 0;
 }
 .md h1, .md h2, .md h3, .md h4, .md h5, .md h6 {
   margin: 24px 0 16px;
