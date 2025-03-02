@@ -298,51 +298,50 @@ body.error {
   }
 }
 
-.index {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+.content .index {
+  font-family: "Open Sans", sans-serif;
   margin: 32px 0;
 }
-.index > div {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 24px;
-  padding-bottom: 24px;
-}
-@media only screen and (max-width: 767px) {
-  .index > div:last-of-type {
-    border: none;
-    margin: 0;
-    padding: 0;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .index > div {
-    width: calc(50% - 16px);
-    flex-grow: 0;
-    flex-shrink: 0;
-  }
-}
-.index h3 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+.content .index h1, .content .index h2, .content .index h3, .content .index h4 {
   font-weight: bold;
   line-height: 1;
+}
+.content .index h1 {
+  font-size: 1.75rem;
+  margin-bottom: 32px;
+}
+.content .index h2 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+.content .index h3 {
+  font-size: 1.25rem;
   margin-bottom: 16px;
 }
 @media only screen and (min-width: 768px) {
-  .index h3 {
+  .content .index h3 {
     font-size: 16px;
   }
 }
 @media only screen and (min-width: 992px) {
-  .index h3 {
+  .content .index h3 {
     font-size: 1.25rem;
   }
 }
-.index p {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.5;
+.content .index p, .content .index ul {
+  line-height: 1.6;
+  margin: 24px 0;
+}
+.content .index strong {
+  font-weight: bold;
+}
+.content .index a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: currentColor;
+}
+.content .index a:hover {
+  text-decoration-color: #aa4646;
 }
 
 .list {
@@ -370,6 +369,7 @@ body.error {
   color: currentColor;
   display: block;
   padding-bottom: 8px;
+  text-decoration: none;
 }
 .list__hed a:hover {
   border-bottom-color: #aa4646;
@@ -445,6 +445,7 @@ body.error {
 }
 .hed a.hed__link {
   color: #aa4646;
+  text-decoration: none;
 }
 .hed a.hed__link:hover {
   opacity: 0.7;
@@ -548,47 +549,70 @@ body.error {
 /**
  * markdown styling
  */
-.md a {
-  border-bottom: 2px solid currentColor;
-  text-decoration: none;
-}
-.md a:hover {
-  border-bottom-color: #aa4646;
-}
-.md p {
-  margin: 24px 0;
+.md {
+  font-family: "Open Sans", sans-serif;
+  margin: 32px 0;
 }
 .md h1, .md h2, .md h3, .md h4, .md h5, .md h6 {
-  margin: 24px 0 16px;
+  font-weight: bold;
   line-height: 1;
 }
 .md h1 {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  margin-bottom: 32px;
 }
 .md h2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
 }
 .md h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .md h3 {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .md h3 {
+    font-size: 1.25rem;
+  }
 }
 .md h4 {
-  font-size: 1.25rem;
+  font-size: 16px;
+  margin-bottom: 16px;
 }
 .md h5 {
-  font-size: 16px;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
 }
 .md h6 {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  margin-bottom: 16px;
 }
-.md em {
-  font-style: italic;
+.md p {
+  line-height: 1.6;
+  margin: 24px 0;
 }
 .md strong {
   font-weight: bold;
 }
+.md em {
+  font-style: italic;
+}
+.md a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: currentColor;
+}
+.md a:hover {
+  text-decoration-color: #aa4646;
+}
 .md hr {
   border: none;
   border-top: 1px solid #aa4646;
+  margin: 24px 0;
 }
 .md blockquote {
   background-color: rgba(255, 255, 255, 0.1);
@@ -605,6 +629,7 @@ body.error {
   font-size: 0.75rem;
   font-variant: normal;
   line-height: 1.5;
+  margin: 24px 0;
 }
 .md code {
   background-color: rgba(51, 51, 51, 0.2);
@@ -623,6 +648,7 @@ body.error {
   max-width: 100%;
 }
 .md table {
+  margin: 24px 0;
   width: 100%;
 }
 .md table thead tr {
@@ -647,7 +673,8 @@ body.error {
   padding-right: 0;
 }
 .md ul {
-  margin-left: 32px;
+  line-height: 1.6;
+  margin: 24px 0 24px 32px;
   list-style-type: disc;
 }
 .md ul li {
@@ -660,7 +687,8 @@ body.error {
   list-style-type: square;
 }
 .md ol {
-  margin-left: 32px;
+  line-height: 1.6;
+  margin: 24px 0 24px 32px;
   list-style-type: decimal-leading-zero;
 }
 .md ol ol {
